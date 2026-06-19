@@ -9,7 +9,7 @@
 
 ## Overview
 
-This project presents the design and implementation of a Traffic Light Control System using the Raspberry Pi Pico W and CircuitPython. The system allows the user to enter the green light countdown using a 4×4 keypad. The entered value is displayed on a dual 7-segment display, while the yellow and red phases operate using fixed countdown values. The system continuously repeats the traffic light sequence after initialization.
+This project presents the design and implementation of a Traffic Light Control System using Raspberry Pi Pico W and CircuitPython. The system allows the user to enter a countdown value for the green traffic light using a 4×4 keypad. The countdown is displayed on a dual 7-segment display, while the yellow and red phases operate using fixed durations. After initialization, the traffic light sequence repeats continuously.
 
 ---
 
@@ -21,7 +21,7 @@ This project presents the design and implementation of a Traffic Light Control S
 - Dual 7-segment display using CD4511 BCD decoder
 - Push button (SW1) to start the system
 - Real-time countdown display
-- Serial monitoring using Thonny Shell
+- Thonny Shell monitoring
 
 ---
 
@@ -43,8 +43,8 @@ This project presents the design and implementation of a Traffic Light Control S
 
 ## GPIO Pin Configuration
 
-| Component | GPIO |
-|-----------|------|
+| Component | GPIO Pin |
+|-----------|----------|
 | Green LED | GP26 |
 | Yellow LED | GP27 |
 | Red LED | GP28 |
@@ -66,7 +66,7 @@ This project presents the design and implementation of a Traffic Light Control S
 ## System Flowchart
 
 <p align="center">
-<img src="images/flowchart.jpg" width="550">
+  <img src="./flowchart.jpg" width="550">
 </p>
 
 <p align="center">
@@ -78,7 +78,7 @@ This project presents the design and implementation of a Traffic Light Control S
 ## Hardware Setup
 
 <p align="center">
-<img src="images/hardware_setup.jpg" width="550">
+  <img src="./hardware_setup.jpg" width="550">
 </p>
 
 <p align="center">
@@ -90,7 +90,7 @@ This project presents the design and implementation of a Traffic Light Control S
 ## Green Phase
 
 <p align="center">
-<img src="images/green_phase.jpg" width="550">
+  <img src="./green_phase.jpg" width="550">
 </p>
 
 <p align="center">
@@ -102,7 +102,7 @@ This project presents the design and implementation of a Traffic Light Control S
 ## Yellow Phase
 
 <p align="center">
-<img src="images/yellow_phase.jpg" width="550">
+  <img src="./yellow_phase.jpg" width="550">
 </p>
 
 <p align="center">
@@ -114,7 +114,7 @@ This project presents the design and implementation of a Traffic Light Control S
 ## Red Phase
 
 <p align="center">
-<img src="images/red_phase.jpg" width="550">
+  <img src="./red_phase.jpg" width="550">
 </p>
 
 <p align="center">
@@ -126,7 +126,7 @@ This project presents the design and implementation of a Traffic Light Control S
 ## Thonny Shell Output
 
 <p align="center">
-<img src="images/thonny_shell_output.jpg" width="750">
+  <img src="./thonny_shell_output.jpg" width="750">
 </p>
 
 <p align="center">
@@ -159,14 +159,12 @@ Traffic-Light-Control-System/
 ├── LICENSE
 ├── .gitignore
 ├── LAB3_Report.pdf
-│
-└── images/
-    ├── flowchart.jpg
-    ├── hardware_setup.jpg
-    ├── green_phase.jpg
-    ├── yellow_phase.jpg
-    ├── red_phase.jpg
-    └── thonny_shell_output.jpg
+├── flowchart.jpg
+├── hardware_setup.jpg
+├── green_phase.jpg
+├── yellow_phase.jpg
+├── red_phase.jpg
+└── thonny_shell_output.jpg
 ```
 
 ---
@@ -367,9 +365,7 @@ while True:
 
 ## Report
 
-The complete laboratory report is available in:
-
-**LAB3_Report.pdf**
+The complete laboratory report is available in **LAB3_Report.pdf**.
 
 ---
 
