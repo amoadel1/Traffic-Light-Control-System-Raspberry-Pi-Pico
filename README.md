@@ -1,14 +1,11 @@
 # Traffic Light Control System using Raspberry Pi Pico
 
-# Traffic Light Control System using Raspberry Pi Pico
-
 ![Platform](https://img.shields.io/badge/Platform-Raspberry%20Pi%20Pico%20W-darkgreen)
 ![Language](https://img.shields.io/badge/Language-CircuitPython-blue)
 ![IDE](https://img.shields.io/badge/IDE-Thonny-blueviolet)
 ![Simulation](https://img.shields.io/badge/Simulation-Wokwi-orange)
 ![License](https://img.shields.io/badge/License-MIT-yellow)
 ![Status](https://img.shields.io/badge/Status-Completed-brightgreen)
-
 
 ## Overview
 
@@ -147,7 +144,6 @@ s71.direction = digitalio.Direction.OUTPUT
 data_available = digitalio.DigitalInOut(board.GP14)
 data_available.direction = digitalio.Direction.INPUT
 
-# ✅ FIXED ORDER (A → B → C → D)
 data_pins = [board.GP10, board.GP11, board.GP12, board.GP13]
 
 data_inputs = []
@@ -175,7 +171,7 @@ def read_keypad():
         value = 0
         for i, pin in enumerate(data_inputs):
             if pin.value:
-                value |= (1 << i)   # ✅ correct shift
+                value |= (1 << i)   
         return keypad_map.get(value, '?')
     return None
 
@@ -301,6 +297,12 @@ Traffic-Light-Control-System/
 ## Author
 
 Adel Husham Mohamedain Yousuf
+
+Electrical Engineering Student
+
+Faculty of Electrical Engineering Technology
+
+Universiti Malaysia Perlis (UniMAP)
 
 ---
 
