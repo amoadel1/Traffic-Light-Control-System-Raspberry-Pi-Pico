@@ -2,93 +2,180 @@
 
 ![Platform](https://img.shields.io/badge/Platform-Raspberry%20Pi%20Pico%20W-darkgreen)
 ![Language](https://img.shields.io/badge/Language-CircuitPython-blue)
-![IDE](https://img.shields.io/badge/IDE-Thonny-blueviolet)
 ![Simulation](https://img.shields.io/badge/Simulation-Wokwi-orange)
-![License](https://img.shields.io/badge/License-MIT-yellow)
 ![Status](https://img.shields.io/badge/Status-Completed-brightgreen)
+
+---
 
 ## Overview
 
-This project implements a traffic light control system using Raspberry Pi Pico and CircuitPython. The user enters the green light countdown using a keypad, and the countdown is displayed on a dual 7-segment display. The system then cycles through the green, yellow, and red traffic light phases automatically.
+This project presents the design and implementation of a Traffic Light Control System using the Raspberry Pi Pico W and CircuitPython. The system allows the user to enter the green light countdown using a 4×4 keypad. The entered value is displayed on a dual 7-segment display, while the yellow and red phases operate using fixed countdown values. The system continuously repeats the traffic light sequence after initialization.
 
 ---
 
 ## Features
 
-- User-defined green light countdown (00–99)
-- 4×4 keypad input
-- Dual 7-segment display
-- Green, yellow, and red LEDs
-- Push button to start the system
+- User-defined green light countdown (00–99 seconds)
 - Automatic traffic light sequence
+- 4×4 keypad interface using MM74C922 encoder
+- Dual 7-segment display using CD4511 BCD decoder
+- Push button (SW1) to start the system
+- Real-time countdown display
+- Serial monitoring using Thonny Shell
 
 ---
 
 ## Hardware Components
 
-- Raspberry Pi Pico
-- 4×4 Keypad
+- Raspberry Pi Pico W
+- 4×4 Matrix Keypad
 - MM74C922 Keypad Encoder
-- CD4511 BCD Decoder
 - Dual 7-Segment Display
-- Push Button
+- CD4511 BCD Decoder
 - Green LED
 - Yellow LED
 - Red LED
+- Push Button (SW1)
 - Breadboard
 - Jumper Wires
 
 ---
 
-## Flowchart
+## GPIO Pin Configuration
 
-![Flowchart](flowcart.jpg)
+| Component | GPIO |
+|-----------|------|
+| Green LED | GP26 |
+| Yellow LED | GP27 |
+| Red LED | GP28 |
+| Push Button | GP15 |
+| BCD A | GP5 |
+| BCD B | GP4 |
+| BCD C | GP3 |
+| BCD D | GP2 |
+| Ones Latch | GP6 |
+| Tens Latch | GP7 |
+| Data Available | GP14 |
+| Keypad A | GP10 |
+| Keypad B | GP11 |
+| Keypad C | GP12 |
+| Keypad D | GP13 |
 
-**Figure 1.** Flowchart of the traffic light control system.
+---
+
+## System Flowchart
+
+<p align="center">
+<img src="images/flowchart.jpg" width="550">
+</p>
+
+<p align="center">
+<b>Figure 1.</b> Flowchart of the traffic light control system.
+</p>
 
 ---
 
 ## Hardware Setup
 
-![Hardware Setup](hardware_setup.jpg)
+<p align="center">
+<img src="images/hardware_setup.jpg" width="550">
+</p>
 
-**Figure 2.** Hardware setup.
+<p align="center">
+<b>Figure 2.</b> Hardware setup of the traffic light control system.
+</p>
 
 ---
 
 ## Green Phase
 
-![Green Phase](green_phase.jpg)
+<p align="center">
+<img src="images/green_phase.jpg" width="550">
+</p>
 
-**Figure 3.** Green LED with user-defined countdown.
+<p align="center">
+<b>Figure 3.</b> Green LED ON during the user-defined countdown.
+</p>
 
 ---
 
 ## Yellow Phase
 
-![Yellow Phase](yellow_phase.jpg)
+<p align="center">
+<img src="images/yellow_phase.jpg" width="550">
+</p>
 
-**Figure 4.** Yellow LED with a fixed 3-second countdown.
+<p align="center">
+<b>Figure 4.</b> Yellow LED ON with a fixed 3-second countdown.
+</p>
 
 ---
 
 ## Red Phase
 
-![Red Phase](red_phase.jpg)
+<p align="center">
+<img src="images/red_phase.jpg" width="550">
+</p>
 
-**Figure 5.** Red LED with a fixed 5-second countdown.
+<p align="center">
+<b>Figure 5.</b> Red LED ON with a fixed 5-second countdown.
+</p>
 
 ---
 
 ## Thonny Shell Output
 
-![Thonny Shell Output](thonny_shell_output.jpg)
+<p align="center">
+<img src="images/thonny_shell_output.jpg" width="750">
+</p>
 
-**Figure 6.** Program output in Thonny IDE.
+<p align="center">
+<b>Figure 6.</b> Program output displayed in the Thonny Shell.
+</p>
+
+---
+
+## System Operation
+
+1. Power on the Raspberry Pi Pico W.
+2. Wait until the system is initialized.
+3. Press the SW1 push button.
+4. Enter a countdown value (00–99) using the keypad.
+5. Press **#** to confirm the input.
+6. The Green LED starts the user-defined countdown.
+7. The Yellow LED remains ON for 3 seconds.
+8. The Red LED remains ON for 5 seconds.
+9. The sequence repeats continuously.
+
+---
+
+## Repository Structure
+
+```text
+Traffic-Light-Control-System/
+│
+├── README.md
+├── code.py
+├── LICENSE
+├── .gitignore
+├── LAB3_Report.pdf
+│
+└── images/
+    ├── flowchart.jpg
+    ├── hardware_setup.jpg
+    ├── green_phase.jpg
+    ├── yellow_phase.jpg
+    ├── red_phase.jpg
+    └── thonny_shell_output.jpg
+```
 
 ---
 
 ## Source Code
+
+The complete CircuitPython source code is provided in **code.py**.
+
+If you would like to view the entire program directly in this page, copy the complete contents of **code.py** and paste it below.
 
 ```python
 import board
@@ -278,31 +365,25 @@ while True:
 
 ---
 
-## Repository Structure
+## Report
 
-```text
-Traffic-Light-Control-System/
-│── README.md
-│── code.py
-│── flowcart.jpg
-│── hardware_setup.jpg
-│── green_phase.jpg
-│── yellow_phase.jpg
-│── red_phase.jpg
-│── thonny_shell_output.jpg
-```
+The complete laboratory report is available in:
+
+**LAB3_Report.pdf**
+
+---
+
+## Software
+
+- CircuitPython
+- Thonny IDE
+- Wokwi Simulator
 
 ---
 
 ## Author
 
-Adel Husham Mohamedain Yousuf
-
-Electrical Engineering Student
-
-Faculty of Electrical Engineering Technology
-
-Universiti Malaysia Perlis (UniMAP)
+**Adel Husham Mohamedain Yousuf**
 
 ---
 
